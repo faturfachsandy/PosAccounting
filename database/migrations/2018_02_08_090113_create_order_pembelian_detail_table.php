@@ -17,7 +17,7 @@ class CreateOrderPembelianDetailTable extends Migration
             $table->increments('id_order_pembelian_detail');
             $table->integer('perakitan_id'); // foreign dari tabel perakitan
             $table->integer('item_id'); // foreign dari tabel item
-            $table->integer('jumlah');
+            $table->integer('jumlah'); //a[apapdwadwoakd]
             $table->decimal('subtotal',15,2);
             $table->text('keterangan');
             $table->timestamps();
