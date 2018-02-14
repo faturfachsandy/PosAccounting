@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateFakturReturBelisTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('faktur_retur_belis', function (Blueprint $table) {
+            $table->increments('id_faktur_retur_beli');
+            $table->date("tanggal");
+            $table->integer("person_id"); //Foreign dari table person / people
+            $table->integer("faktur_pembelian_id"); //Foreign dari table faktur pembelian
+            $table->integer("gudang_id"); //Foreign dari table gudang
+            $table->boolean("tipe_diskon")->default(false);
+            $table->integer("diskon");
+            $table->decimal("ppn",15,2);
+            $table->text("keterangan");
+            $table->integer("jangka_waktu_kredit_id"); //Foreign dari table jangka waktu kredit
+            $table->date("jatuh_tempo");
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('faktur_retur_belis');
+    }
+}
