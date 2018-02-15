@@ -15,7 +15,7 @@ class CreateSubnilaiNilaisTable extends Migration
     {
         Schema::create('subnilai_nilais', function (Blueprint $table) {
             $table->increments('id_subnilai');
-            $table->integer('nilai_id'); //foreign dari tabel nilai
+            $table->integer('nilai_id')->unsigned(); //foreign dari tabel nilai
             $table->string('nama_subnilai', 50);
             $table->text('keterangan');
             $table->boolean('default')->default(false);
@@ -24,6 +24,9 @@ class CreateSubnilaiNilaisTable extends Migration
             $table->date('berlaku_hingga');
             $table->boolean('aktif')->default(true);
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("nilai_id")->references("id_nilai")->on("nilais")->onDelete("cascade");
         });
     }
 

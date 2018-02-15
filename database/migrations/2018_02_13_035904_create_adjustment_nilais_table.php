@@ -17,9 +17,12 @@ class CreateAdjustmentNilaisTable extends Migration
             $table->increments('id_adjustment_nilai');
             $table->date('tanggal');
             $table->string('no_ref', 50);
-            $table->integer('account_id'); //Foreign dari tabel account
+            $table->integer('account_id')->unsigned(); //Foreign dari tabel account
             $table->text('keterangan');
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("account_id")->references("id_account")->on("accounts")->onDelete("cascade");
         });
     }
 

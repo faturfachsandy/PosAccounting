@@ -15,10 +15,14 @@ class CreatePermissionUsersTable extends Migration
     {
         Schema::create('permission_users', function (Blueprint $table) {
             $table->increments('id_permission_user');
-            $table->integer('modul_app_id'); //foreign dari tabel modul app
-            $table->integer('user_id'); //foreign dari table users
-            $table->integer('grup_id'); //foreign dari table grup user
+            $table->integer('modul_app_id')->unsigned(); //foreign dari tabel modul app
+            $table->integer('user_id')->unsigned(); //foreign dari table users
+            $table->integer('grup_id')->unsigned(); //foreign dari table grup user
             $table->timestamps();
+
+            $table->foreign("modul_app_id")->references("id_modul_app")->on("modul_apps")->onDelete("cascade");
+            $table->foreign("user_id")->references("id_user")->on("users")->onDelete("cascade");
+            $table->foreign("grup_id")->references("id_grup_user")->on("grup_users")->onDelete("cascade");
         });
     }
 

@@ -15,10 +15,12 @@ class CreateLogUsersTable extends Migration
     {
         Schema::create('log_users', function (Blueprint $table) {
             $table->increments('id_log_user');
-            $table->integer('user_id'); //foreign dari tabel users
+            $table->integer('user_id')->unsigned(); //foreign dari tabel users
             $table->string('aktivitas', 50);
             $table->text('keterangan');
             $table->timestamps();
+
+            $table->foreign("user_id")->references("id_user")->on("users")->onDelete("cascade");
         });
     }
 

@@ -15,12 +15,16 @@ class CreateKonversiSatuansTable extends Migration
     {
         Schema::create('konversi_satuans', function (Blueprint $table) {
             $table->increments('id_konversi_satuan');
-            $table->integer('satuan1_id');// baca bawah
-            $table->integer('satuan2_id');// foreign dari tabel satuan
+            $table->integer('satuan1_id')->unsigned();// baca bawah
+            $table->integer('satuan2_id')->unsigned();// foreign dari tabel satuan
             $table->integer('nilai_konversi');
             $table->text('keterangan');
             $table->boolean('aktif')->default(true);
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("satuan1_id")->references("id_satuan")->on("satuans")->onDelete("cascade");
+            $table->foreign("satuan2_id")->references("id_satuan")->on("satuans")->onDelete("cascade");
         });
     }
 

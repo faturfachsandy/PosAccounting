@@ -17,11 +17,14 @@ class CreateGudangsTable extends Migration
             $table->increments('id_gudang');
             $table->string('nama_gudang', 50);
             $table->text('keterangan');
-            $table->integer('alamat_id'); //foreign dari tabel alamat
+            $table->integer('alamat_id')->unsigned(); //foreign dari tabel alamat
             $table->boolean('default')->default(false);
             $table->boolean('penjualan')->default(true);
             $table->boolean('aktif')->default(true);
             $table->timestamps();
+            
+            //-------- Relasi ----------
+            $table->foreign("alamat_id")->references("id_alamat")->on("alamats")->onDelete("cascade");
         });
     }
 
