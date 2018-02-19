@@ -12,6 +12,6 @@ class Nilai extends Model
 
     public function subnilaiNilai 
     {
-    	return $this->hasOne(SubnilaiNilai::class);
+    	return $this->hasOne(SubnilaiNilai::class); //test
     }
 }
