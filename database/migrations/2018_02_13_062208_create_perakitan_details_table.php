@@ -15,12 +15,16 @@ class CreatePerakitanDetailsTable extends Migration
     {
         Schema::create('perakitan_details', function (Blueprint $table) {
             $table->increments('id_perakitan_detail');
-            $table->integer('perakitan_id'); // foreign dari tabel perakitan
-            $table->integer('item_id'); // foreign dari tabel item
+            $table->integer('perakitan_id')->unsigned(); // foreign dari tabel perakitan
+            $table->integer('item_id')->unsigned(); // foreign dari tabel item
             $table->integer('jumlah');
             $table->decimal('subtotal',15,2);
             $table->text('keterangan');
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("perakitan_id")->references("id_perakitan")->on("perakitans")->onDelete("cascade");
+            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
         });
     }
 

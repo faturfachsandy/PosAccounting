@@ -15,8 +15,11 @@ class CreateBuktiKasKeluarDetailsTable extends Migration
     {
         Schema::create('bukti_kas_keluar_details', function (Blueprint $table) {
             $table->increments('id_bbk_detail');
-            $table->integer("faktur_pembelian_id"); //Foreign dari table faktur pembelian
+            $table->integer("faktur_pembelian_id")->unsigned(); //Foreign dari table faktur pembelian
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("faktur_pembelian_id")->references("id_faktur_pembelian")->on("faktur_pembelians")->onDelete("cascade");
         });
     }
 

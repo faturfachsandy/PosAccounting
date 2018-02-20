@@ -17,11 +17,16 @@ class CreateBarangDatangsTable extends Migration
             $table->increments('id_barang_datang');
             $table->date("tgl_barang_datang");
             $table->string("no_ref", 50);
-            $table->integer("supplier"); //Foreign dari tabel person / people
+            $table->integer("supplier")->unsigned(); //Foreign dari tabel person / people
             $table->integer("status");
-            $table->integer("user_id"); //Foreign dari tabel users
-            $table->integer("account_id"); // Foreign dari tabel account
+            $table->integer("user_id")->unsigned(); //Foreign dari tabel users
+            $table->integer("account_id")->unsigned(); // Foreign dari tabel account
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("supplier")->references("id_person")->on("people")->onDelete("cascade");
+            $table->foreign("user_id")->references("id_user")->on("users")->onDelete("cascade");
+            $table->foreign("account_id")->references("id_account")->on("accounts")->onDelete("cascade");
         });
     }
 

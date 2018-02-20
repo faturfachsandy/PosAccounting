@@ -15,12 +15,16 @@ class CreateSaldoAwalsTable extends Migration
     {
         Schema::create('saldo_awals', function (Blueprint $table) {
             $table->increments('id_saldo_awal');
-            $table->integer('item_id'); //foreign dari tabel item
+            $table->integer('item_id')->unsigned(); //foreign dari tabel item
             $table->integer('stok_awal');
-            $table->integer('satuan_item_id'); //data dari satuan id di item
+            $table->integer('satuan_item_id')->unsigned(); //data dari satuan id di item
             $table->decimal('hpp_awal',15,2);
             $table->decimal('subtotal',15,2);
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+        
         });
     }
 

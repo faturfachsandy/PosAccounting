@@ -15,10 +15,13 @@ class CreateBarangDatangDetailsTable extends Migration
     {
         Schema::create('barang_datang_details', function (Blueprint $table) {
             $table->increments('id_barang_datang_id');
-            $table->integer("barang_datang_id"); //Foreign dari tabel barang datang
+            $table->integer("barang_datang_id")->unsigned(); //Foreign dari tabel barang datang
             $table->integer("jumlah");
             $table->date("tgl_expired");
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("barang_datang_id")->references("id_barang_datang")->on("barang_datangs")->onDelete("cascade");
         });
     }
 

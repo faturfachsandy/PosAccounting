@@ -15,7 +15,7 @@ class CreateFormulasTable extends Migration
     {
         Schema::create('formulas', function (Blueprint $table) {
             $table->increments('id_formula');
-            $table->integer('item_id'); //foreign dari tabel item
+            $table->integer('item_id')->unsigned(); //foreign dari tabel item
             $table->integer('satuan_item_id'); //data dari satuan id di item
             $table->date('tgl_mulai_berlaku');
             $table->date('tgl_sampai_berlaku');
@@ -23,6 +23,9 @@ class CreateFormulasTable extends Migration
             $table->text('keterangan');
             $table->boolean('aktif')->default(true);
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
         });
     }
 

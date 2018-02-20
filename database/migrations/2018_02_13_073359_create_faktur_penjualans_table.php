@@ -17,10 +17,15 @@ class CreateFakturPenjualansTable extends Migration
             $table->increments('id_faktur_penjualan');
             $table->string("no_ref",50);
             $table->string("tipe_invoice");
-            $table->integer("customer_id"); //Foreign dari table person / people
-            $table->integer("sales_order_id"); //Foreign dari table sales order
-            $table->integer("surat_jalan_id"); //Foreign dari table surat jalan
+            $table->integer("customer_id")->unsigned(); //Foreign dari table person / people
+            $table->integer("sales_order_id")->unsigned(); //Foreign dari table sales order
+            $table->integer("surat_jalan_id")->unsigned(); //Foreign dari table surat jalan
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("customer_id")->references("id_person")->on("people")->onDelete("cascade");
+            $table->foreign("sales_order_id")->references("id_sales_order")->on("sales_orders")->onDelete("cascade");
+            $table->foreign("surat_jalan_id")->references("id_surat_jalan")->on("surat_jalans")->onDelete("cascade");
         });
     }
 
