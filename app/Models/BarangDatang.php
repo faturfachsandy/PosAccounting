@@ -8,6 +8,7 @@ use App\Models\FakturPembelian;
 use App\Models\Person;
 use App\Models\Account;
 use App\User;
+use App\Models\Item;
 
 
 class BarangDatang extends Model
@@ -37,5 +38,10 @@ class BarangDatang extends Model
     public function account()
     {
     	return $this->belongsTo(Account::class, 'account_id');
+    }
+
+    public function item()
+    {
+        return $this->belongsToMany(Item::class);
     }
 }

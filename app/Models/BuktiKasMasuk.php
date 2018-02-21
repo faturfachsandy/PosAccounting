@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\BuktiKasMasukDetail;
+use App\Models\FakturPenjualan;
 use App\Models\Account;
 use App\Models\Person;
 
@@ -11,9 +11,9 @@ class BuktiKasMasuk extends Model
 {
     protected $fillable = [''];
 
-    public function buktiKasMasukDetail()
+    public function fakturPenjualan()
     {
-    	return $this->hasOne(BuktiKasMasukDetail::class, 'id_bukti_kas_masuk');
+    	return $this->belongsToMany(FakturPenjualan::class);
     }
 
     public function account()
