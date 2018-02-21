@@ -15,7 +15,7 @@ class CreateStokOpnameDetailsTable extends Migration
     {
         Schema::create('stok_opname_details', function (Blueprint $table) {
             $table->increments('id_stok_opname_detail');
-            $table->integer('id_item'); // foreign dari tabel item
+            $table->integer('item_id'); // foreign dari tabel item
             $table->integer('jumlah');
             $table->text('keterangan');
             $table->timestamps();
