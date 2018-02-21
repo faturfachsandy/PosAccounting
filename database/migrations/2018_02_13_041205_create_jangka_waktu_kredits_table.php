@@ -15,12 +15,15 @@ class CreateJangkaWaktuKreditsTable extends Migration
     {
         Schema::create('jangka_waktu_kredits', function (Blueprint $table) {
             $table->increments('id_jangka_waktu_kredit');
-            $table->integer('account_id'); //foreign dari table account
-            $table->integer('jangka_waktu_kredit'); //kode parent account
+            $table->integer('account_id')->unsigned()->unsigned(); //foreign dari table account
+            $table->integer('jangka_waktu_kredit')->unsigned();
             $table->boolean('default')->default(false);
             $table->boolean('aktif')->default(true);
             $table->text('keterangan');
             $table->timestamps();
+
+             //-------- Relasi ----------
+            $table->foreign("account_id")->references("id_account")->on("accounts")->onDelete("cascade");
         });
     }
 

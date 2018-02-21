@@ -15,12 +15,16 @@ class CreateDaftarHargasTable extends Migration
     {
         Schema::create('daftar_hargas', function (Blueprint $table) {
             $table->increments('id_daftar_harga');
-            $table->integer('item_id'); //foreign dari tabel item
+            $table->integer('item_id')->unsigned(); //foreign dari tabel item
             $table->decimal('harga_beli',15,2);
-            $table->integer('daftar_harga_detail_id'); //foreign dari tabel daftar harga detail
+            $table->integer('daftar_harga_detail_id')->unsigned(); //foreign dari tabel daftar harga detail
             $table->boolean('tipe_diskon')->default(false);
             $table->integer('diskon');
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("daftar_harga_detail_id")->references("id_detail_harga")->on("daftar_harga_details")->onDelete("cascade");
         });
     }
 

@@ -15,12 +15,16 @@ class CreateSubformulasTable extends Migration
     {
         Schema::create('subformulas', function (Blueprint $table) {
             $table->increments('id_subformula');
-            $table->integer('formula_id'); //foreign dari tabel formula
-            $table->integer('item_id'); //foreign dari tabel item
+            $table->integer('formula_id')->unsigned(); //foreign dari tabel formula
+            $table->integer('item_id')->unsigned(); //foreign dari tabel item
             $table->integer('jumlah');
             $table->integer('satuan_item_id'); //data dari satuan id di item
             $table->text('keterangan');
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("formula_id")->references("id_formula")->on("formulas")->onDelete("cascade");
+            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
         });
     }
 

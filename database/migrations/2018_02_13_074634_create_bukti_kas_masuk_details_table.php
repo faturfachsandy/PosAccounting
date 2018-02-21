@@ -15,11 +15,15 @@ class CreateBuktiKasMasukDetailsTable extends Migration
     {
         Schema::create('bukti_kas_masuk_details', function (Blueprint $table) {
             $table->increments('id_bukti_kas_masuk_detail');
-            $table->integer("bukti_kas_masuk_id"); //Foreign dari table bukti kas masuk
-            $table->integer("faktur_penjualan_id"); //Foreign dari table faktur pembelian
-            //$table->("potongan");
+            $table->integer("bukti_kas_masuk_id")->unsigned(); //Foreign dari table bukti kas masuk
+            $table->integer("faktur_penjualan_id")->unsigned(); //Foreign dari table faktur pembelian
+            $table->integer("potongan");
             $table->boolean("lunas")->default(false);
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("bukti_kas_masuk_id")->references("id_bukti_kas_masuk")->on("bukti_kas_masuks")->onDelete("cascade");
+            $table->foreign("faktur_penjualan_id")->references("id_faktur_penjualan")->on("faktur_penjualans")->onDelete("cascade");
         });
     }
 

@@ -16,10 +16,10 @@ class CreatePeopleTable extends Migration
         Schema::create('people', function (Blueprint $table) {
             $table->increments('id_person');
             $table->integer('tipe_person');
-            $table->integer('karyawan_id'); //foreign dari tabel karyawan
+            $table->integer('karyawan_id')->unsigned(); //foreign dari tabel karyawan
             $table->string('kode_person',50)->index();
             $table->string('nama',25);
-            $table->integer('termin_pembayaran'); //foreign dari tabel jangka waktu kredit
+            $table->integer('termin_pembayaran')->unsigned(); //foreign dari tabel jangka waktu kredit
             $table->integer('batas_tempo');
             $table->integer('batas_piutang');
             $table->integer('batas_hutang');
@@ -28,12 +28,18 @@ class CreatePeopleTable extends Migration
             $table->boolean('tipe_diskon')->default(false);
             $table->integer('diskon');
             $table->text('keterangan');
-            $table->integer('coa_piutang_account_id'); //foreign dari tabel account
-            $table->integer('tipe_harga_jual_id'); //foreign dari tabel
+            $table->integer('coa_piutang_account_id')->unsigned(); //foreign dari tabel account
+            $table->integer('tipe_harga_jual_id')->unsigned(); //foreign dari tabel daftar harga
             $table->boolean('bisa_supplier')->default(false);
             $table->boolean('bisa_customer')->default(false);
             $table->boolean('aktif')->default(true);
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("karyawan_id")->references("id_karyawan")->on("karyawans")->onDelete("cascade");
+            $table->foreign("termin_pembayaran")->references("id_jangka_waktu_kredit")->on("jangka_waktu_kredits")->onDelete("cascade");
+            $table->foreign("coa_piutang_account_id")->references("id_account")->on("accounts")->onDelete("cascade");
+            $table->foreign("tipe_harga_jual_id")->references("id_daftar_harga")->on("daftar_hargas")->onDelete("cascade");
         });
     }
 

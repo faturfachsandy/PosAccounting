@@ -15,9 +15,13 @@ class CreateDetailItemsTable extends Migration
     {
         Schema::create('detail_items', function (Blueprint $table) {
             $table->increments('id_detail_item');
-            $table->integer('item_id'); //foreign dari tabel item
-            $table->integer('konversi_satuan_id'); //foreign dari tabel konversi satuan
+            $table->integer('item_id')->unsigned(); //foreign dari tabel item
+            $table->integer('konversi_satuan_id')->unsigned(); //foreign dari tabel konversi satuan
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("konversi_satuan_id")->references("id_konversi_satuan")->on("konversi_satuans")->onDelete("cascade");
         });
     }
 

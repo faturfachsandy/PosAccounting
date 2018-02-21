@@ -18,11 +18,15 @@ class CreatePerakitansTable extends Migration
             $table->date('tanggal');
             $table->string('no_ref',50);
             $table->decimal('hpp',15,2);
-            $table->integer('item_id'); // foreign dari tabel item
+            $table->integer('item_id')->unsigned(); // foreign dari tabel item
             $table->integer('jumlah_buat');
-            $table->integer('gudang_id'); // foreign dari tabel gudang
+            $table->integer('gudang_id')->unsigned(); // foreign dari tabel gudang
             $table->text('keterangan');
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("gudang_id")->references("id_gudang")->on("gudangs")->onDelete("cascade");
         });
     }
 

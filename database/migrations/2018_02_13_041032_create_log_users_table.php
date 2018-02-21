@@ -20,6 +20,7 @@ class CreateLogUsersTable extends Migration
             $table->text('keterangan');
             $table->timestamps();
 
+            //-------- Relasi ----------
             $table->foreign("user_id")->references("id_user")->on("users")->onDelete("cascade");
         });
     }

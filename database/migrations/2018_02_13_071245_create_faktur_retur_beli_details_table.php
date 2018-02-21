@@ -15,10 +15,14 @@ class CreateFakturReturBeliDetailsTable extends Migration
     {
         Schema::create('faktur_retur_beli_details', function (Blueprint $table) {
             $table->increments('id_faktur_retur_beli_detail');
-            $table->integer("faktur_retur_beli_id"); //Foreign dari table faktur retur beli
-            $table->integer("item_id"); //Foreign dari table item
+            $table->integer("faktur_retur_beli_id")->unsigned(); //Foreign dari table faktur retur beli
+            $table->integer("item_id")->unsigned(); //Foreign dari table item
             $table->integer("jumlah");
             $table->timestamps();
+
+            //-------- Relasi ----------
+            $table->foreign("faktur_retur_beli_id")->references("id_faktur_retur_beli")->on("faktur_retur_belis")->onDelete("cascade");
+            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
         });
     }
 
