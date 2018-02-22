@@ -30,11 +30,11 @@ class Account extends Model
 
     public function barangDatang()
     {
-    	return $this->hasOne(BarangDatang::class, 'id_account');
+    	return $this->hasMany(BarangDatang::class, 'id_account');
     }
 
     public function buktiKasKeluar()
     {
-    	return $this->hasOne(BuktiKasKeluar::class, 'id_account');
+    	return $this->hasMany(BuktiKasKeluar::class, 'id_account');
     }
 }

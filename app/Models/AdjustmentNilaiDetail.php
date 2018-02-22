@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AdjustmentNilaiDetail extends Model
 {
-	protected $fillable = [''];
+	protected $fillable = ['nilai', 'keterangan'];
 
 	// public function adjustmentNilai()
  //    {

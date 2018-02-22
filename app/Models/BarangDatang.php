@@ -15,14 +15,14 @@ class BarangDatang extends Model
 {
     protected $fillable = [''];
 
-    public function barangDatangDetail()
-    {
-    	return $this->hasOne(BarangDatangDetail::class, 'id_barang_datang');
-    }
+    // public function barangDatangDetail()
+    // {
+    // 	return $this->hasMany(BarangDatangDetail::class, 'id_barang_datang');
+    // }
 
     public function fakturPembelian()
     {
-    	return $this->hasOne(FakturPembelian::class, 'id_barang_detail');
+    	return $this->hasOne(FakturPembelian::class, 'id_barang_datang');
     }
 
     public function person()
@@ -42,6 +42,6 @@ class BarangDatang extends Model
 
     public function item()
     {
-        return $this->belongsToMany(Item::class);
+        return $this->belongsToMany(Item::class, 'barang_datang_detail', 'id_barang_datang', 'id_item');
     }
 }

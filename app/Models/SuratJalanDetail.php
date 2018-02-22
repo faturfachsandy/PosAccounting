@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class SuratJalanDetail extends Model
 {
-    //
+    protected $fillable = [''];
 }

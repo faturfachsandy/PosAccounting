@@ -16,31 +16,32 @@ class FakturPenjualan extends Model
 
     public function buktiKasMasuk()
     {
-    	return $this->belongsToMany(BuktiKasMasuk::class);
-    }
-
-    public function fakturReturJual()
-    {
-    	return $this->hasOne(FakturReturJual::class, 'id_faktur_penjualan');
-    }
-
-    public function person()
-    {
-    	return $this->belongsTo(Person::class, 'customer_id');
-    }
-
-    public function salesOrder()
-    {
-    	return $this->belongsTo(SalesOrder::class, 'sales_order_id');
-    }
-
-    public function suratJalan()
-    {
-    	return $this->belongsTo(SuratJalan::class, 'surat_jalan_id');
+    	return $this->belongsToMany(BuktiKasMasuk::class,
+            'bukti_kas_masuk_detail', 'id_faktur_penjualan', 'id_bukti_kas_masuk');
     }
 
     public function item()
     {
-    	return $this->belongsToMany(Item::class);
+    	return $this->belongsToMany(Item::class, 'faktur_penjualan_detail', 'id_faktur_penjualan', 'id_item');
+    }
+
+    public function fakturReturJual()
+    {
+        return $this->hasMany(FakturReturJual::class, 'id_faktur_penjualan');
+    }
+
+    public function person()
+    {
+        return $this->belongsTo(Person::class, 'customer_id');
+    }
+
+    public function salesOrder()
+    {
+        return $this->belongsTo(SalesOrder::class, 'sales_order_id');
+    }
+
+    public function suratJalan()
+    {
+        return $this->belongsTo(SuratJalan::class, 'surat_jalan_id');
     }
 }

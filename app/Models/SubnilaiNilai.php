@@ -11,9 +11,34 @@ class SubnilaiNilai extends Model
     protected $fillable = 
     ['nama_subnilai', 'keterangan', 'default', 'urutan', 'berlaku_sejak', 'berlaku_hingga', 'aktif'];
 
-    public function item
+    public function itemKelompokSubnilai
     {
     	return $this->hasMany(Item::class, 'id_subnilai');
+    }
+
+    public function itemJenisSubnilai
+    {
+        return $this->hasMany(Item::class, 'id_subnilai');
+    }
+
+    public function itemTipeSubnilai
+    {
+        return $this->hasMany(Item::class, 'id_subnilai');
+    }
+
+    public function itemMerkSubnilai
+    {
+        return $this->hasMany(Item::class, 'id_subnilai');
+    }
+
+    public function itemMadeinSubnilai
+    {
+        return $this->hasMany(Item::class, 'id_subnilai');
+    }
+
+    public function itemGradeSubnilai
+    {
+        return $this->hasMany(Item::class, 'id_subnilai');
     }
 
     public function nilai 

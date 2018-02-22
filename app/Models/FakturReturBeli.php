@@ -12,9 +12,19 @@ class FakturReturBeli extends Model
 {
     protected $fillable = [''];
 
+    public function item()
+    {
+        return $this->belongsToMany(Item::class, 'faktur_retur_beli_detail', 'id_faktur_retur_beli', 'id_item');
+    }
+
     public function fakturPembelian()
     {
-    	return $this->belongsTo(FakturPembelian::class, 'faktur_pembelian_id');
+        return $this->belongsTo(FakturPembelian::class, 'faktur_pembelian_id');
+    }
+
+    public function person()
+    {
+    	return $this->belongsTo(Person::class, 'person_id');
     }
 
     public function gudang()

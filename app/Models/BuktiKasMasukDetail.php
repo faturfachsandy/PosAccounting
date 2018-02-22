@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BuktiKasMasukDetail extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['potongan', 'lunas'];
 
     // public function buktiKasMasuk()
     // {

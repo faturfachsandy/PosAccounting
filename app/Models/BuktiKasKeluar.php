@@ -23,6 +23,7 @@ class BuktiKasKeluar extends Model
 
     public function fakturPembelian()
     {
-    	return $this->belongsToMany(FakturPembelian::class);
+    	return $this->belongsToMany(FakturPembelian::class, 
+            'bukti_kas_keluar_detail', 'id_bukti_kas_keluar', 'id_faktur_pembelian');
     }
 }

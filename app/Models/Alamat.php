@@ -18,11 +18,11 @@ class Alamat extends Model
 
     public function orderPembelian()
     {
-    	return $this->hasOne(OrderPembelian::class, 'id_alamat');
+    	return $this->hasMany(OrderPembelian::class, 'id_alamat');
     }
 
     public function detailPerson()
     {
-    	return $this->hasOne(DetailPerson::class, 'id_alamat');
+    	return $this->hasMany(DetailPerson::class, 'id_alamat');
     }
 }

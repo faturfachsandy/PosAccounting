@@ -13,7 +13,8 @@ class BuktiKasMasuk extends Model
 
     public function fakturPenjualan()
     {
-    	return $this->belongsToMany(FakturPenjualan::class);
+    	return $this->belongsToMany(FakturPenjualan::class,
+            'bukti_kas_masuk_detail', 'id_bukti_kas_masuk', 'id_faktur_penjualan');
     }
 
     public function account()

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class FakturReturJualDetail extends Model
 {
-    //
+    protected $fillable = ['jumlah'];
 }

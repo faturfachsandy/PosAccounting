@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FakturPembelianDetail extends Model
 {
-    protected $fillable = [''];
+    // protected $fillable = [''];
 
     // public function fakturPembelian()
     // {

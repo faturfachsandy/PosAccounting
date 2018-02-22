@@ -13,7 +13,7 @@ class DaftarHarga extends Model
 
     public function person()
     {
-    	return $this->hasOne(BarangDatang::class, 'id_daftar_harga');
+    	return $this->hasMany(BarangDatang::class, 'id_daftar_harga');
     }
 
     public function item()

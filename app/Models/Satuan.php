@@ -10,7 +10,12 @@ class Satuan extends Model
 {
     protected $fillable = [''];
 
-    public function konversiSatuan
+    public function konveriSatuan1
+    {
+    	return $this->hasMany(KonversiSatuan::class, 'id_satuan');
+    }
+
+    public function konveriSatuan2
     {
     	return $this->hasMany(KonversiSatuan::class, 'id_satuan');
     }
