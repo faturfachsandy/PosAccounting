@@ -7,6 +7,8 @@ use App\Models\Karyawan;
 use App\Models\Person;
 use App\Models\DetailPerson;
 use App\Models\Item;
+use App\Models\FakturPenjualan;
+use App\Models\SuratJalan;
 
 class SalesOrder extends Model
 {
@@ -15,6 +17,16 @@ class SalesOrder extends Model
     public function item()
     {
         return $this->belongsToMany(Item::class, 'sales_order_detail', 'id_sales_order', 'id_item');
+    }
+
+    public function suratJalan()
+    {
+        return $this->hasMany(SuratJalan::class, 'id_sales_order');
+    }
+
+    public function fakturPenjualan()
+    {
+        return $this->hasMany(FakturPenjualan::class, 'id_sales_order');
     }
 
     public function karyawan()

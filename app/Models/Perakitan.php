@@ -25,4 +25,9 @@ class Perakitan extends Model
     {
         return $this->hasMany(OrderPembelianDetail::class, 'id_perakitan');
     }
+
+    public function itemMany()
+    {
+        return $this->belongsToMany(Item::class, 'perakitan_detail', 'id_perakitan', 'id_item');
+    }
 }

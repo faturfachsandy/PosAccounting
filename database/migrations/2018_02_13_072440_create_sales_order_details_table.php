@@ -15,7 +15,7 @@ class CreateSalesOrderDetailsTable extends Migration
     {
         Schema::create('sales_order_details', function (Blueprint $table) {
             $table->increments('id_sales_order_detail');
-            $table->integer("sales_order_id"); 
+            $table->integer("sales_order_id")->unsigned(); // foreign dari table sales order
             $table->integer("item_id")->unsigned(); //Foreign dari table item
             $table->decimal("harga",15,2);
             $table->integer("jumlah");
@@ -25,6 +25,7 @@ class CreateSalesOrderDetailsTable extends Migration
 
             //-------- Relasi ----------
             $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("sales_order_id")->references("id_sales_order")->on("sales_orders")->onDelete("cascade");
         });
     }
 
