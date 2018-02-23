@@ -11,7 +11,7 @@ use App\Models\BuktiKasKeluar;
 
 class Account extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['nama_account', 'kode_parent', 'keterangan'];
 
     public function adjusmnetNilai()
     {
