@@ -20,21 +20,21 @@ class JangkaWaktuKredit extends Model
 
     public function fakturReturJual()
     {
-    	return $this->hasMany(FakturReturJual::class, 'id_jangka_waktu_kredit');
+    	return $this->hasMany(FakturReturJual::class, 'id');
     }
 
     public function fakturReturBeli()
     {
-    	return $this->hasMany(FakturReturBeli::class, 'id_jangka_waktu_kredit');
+    	return $this->hasMany(FakturReturBeli::class, 'id');
     }
 
     public function orderPembelian()
     {
-    	return $this->hasMany(OrderPembelian::class, 'id_jangka_waktu_kredit');
+    	return $this->hasMany(OrderPembelian::class, 'id');
     }
 
     public function fakturPembelian()
     {
-    	return $this->hasMany(FakturPembelian::class, 'id_jangka_waktu_kredit');
+    	return $this->hasMany(FakturPembelian::class, 'id');
     }
 }

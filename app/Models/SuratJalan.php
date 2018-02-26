@@ -15,12 +15,12 @@ class SuratJalan extends Model
 
     public function fakturPenjualan()
     {
-        return $this->hasMany(FakturPenjualan::class, 'id_surat_jalan');
+        return $this->hasMany(FakturPenjualan::class, 'id');
     }
 
     public function item()
     {
-        return $this->belongsToMany(Item::class, 'surat_jalan_detail', 'id_surat_jalan', 'item_id');
+        return $this->belongsToMany(Item::class, 'surat_jalan_detail', 'surat_jalan_id', 'item_id');
     }
 
     public function salesOrder()

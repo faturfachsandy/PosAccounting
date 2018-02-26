@@ -14,7 +14,7 @@ class CreateFakturPenjualansTable extends Migration
     public function up()
     {
         Schema::create('faktur_penjualans', function (Blueprint $table) {
-            $table->increments('id_faktur_penjualan');
+            $table->increments('id');
             $table->string("no_ref",50);
             $table->string("tipe_invoice");
             $table->integer("customer_id")->unsigned(); //Foreign dari table person / people
@@ -23,9 +23,9 @@ class CreateFakturPenjualansTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("customer_id")->references("id_person")->on("people")->onDelete("cascade");
-            $table->foreign("sales_order_id")->references("id_sales_order")->on("sales_orders")->onDelete("cascade");
-            $table->foreign("surat_jalan_id")->references("id_surat_jalan")->on("surat_jalans")->onDelete("cascade");
+            $table->foreign("customer_id")->references("id")->on("people")->onDelete("cascade");
+            $table->foreign("sales_order_id")->references("id")->on("sales_orders")->onDelete("cascade");
+            $table->foreign("surat_jalan_id")->references("id")->on("surat_jalans")->onDelete("cascade");
         });
     }
 

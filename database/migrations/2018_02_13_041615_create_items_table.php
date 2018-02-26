@@ -14,7 +14,7 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->increments('id_item');
+            $table->increments('id');
             $table->string('kode_item', 50)->index();
             $table->integer('gudang_id')->unsigned(); //foreign dari tabel gudang
             $table->string('nama_item', 50);
@@ -39,14 +39,14 @@ class CreateItemsTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("gudang_id")->references("id_gudang")->on("gudangs")->onDelete("cascade");
-            $table->foreign("satuan_id")->references("id_satuan")->on("satuans")->onDelete("cascade");
-            $table->foreign("kelompok_subnilai_id")->references("id_subnilai")->on("subnilai_nilais")->onDelete("cascade");
-            $table->foreign("jenis_subnilai_id")->references("id_subnilai")->on("subnilai_nilais")->onDelete("cascade");
-            $table->foreign("tipe_item_subnilai_id")->references("id_subnilai")->on("subnilai_nilais")->onDelete("cascade");
-            $table->foreign("merk_subnilai_id")->references("id_subnilai")->on("subnilai_nilais")->onDelete("cascade");
-            $table->foreign("madein_subnilai_id")->references("id_subnilai")->on("subnilai_nilais")->onDelete("cascade");
-            $table->foreign("grade_subnilai_id")->references("id_subnilai")->on("subnilai_nilais")->onDelete("cascade");
+            $table->foreign("gudang_id")->references("id")->on("gudangs")->onDelete("cascade");
+            $table->foreign("satuan_id")->references("id")->on("satuans")->onDelete("cascade");
+            $table->foreign("kelompok_subnilai_id")->references("id")->on("subnilai_nilais")->onDelete("cascade");
+            $table->foreign("jenis_subnilai_id")->references("id")->on("subnilai_nilais")->onDelete("cascade");
+            $table->foreign("tipe_item_subnilai_id")->references("id")->on("subnilai_nilais")->onDelete("cascade");
+            $table->foreign("merk_subnilai_id")->references("id")->on("subnilai_nilais")->onDelete("cascade");
+            $table->foreign("madein_subnilai_id")->references("id")->on("subnilai_nilais")->onDelete("cascade");
+            $table->foreign("grade_subnilai_id")->references("id")->on("subnilai_nilais")->onDelete("cascade");
 
         });
     }

@@ -13,32 +13,32 @@ class SubnilaiNilai extends Model
 
     public function itemKelompokSubnilai
     {
-    	return $this->hasMany(Item::class, 'id_subnilai');
+    	return $this->hasMany(Item::class, 'id');
     }
 
     public function itemJenisSubnilai
     {
-        return $this->hasMany(Item::class, 'id_subnilai');
+        return $this->hasMany(Item::class, 'id');
     }
 
     public function itemTipeSubnilai
     {
-        return $this->hasMany(Item::class, 'id_subnilai');
+        return $this->hasMany(Item::class, 'id');
     }
 
     public function itemMerkSubnilai
     {
-        return $this->hasMany(Item::class, 'id_subnilai');
+        return $this->hasMany(Item::class, 'id');
     }
 
     public function itemMadeinSubnilai
     {
-        return $this->hasMany(Item::class, 'id_subnilai');
+        return $this->hasMany(Item::class, 'id');
     }
 
     public function itemGradeSubnilai
     {
-        return $this->hasMany(Item::class, 'id_subnilai');
+        return $this->hasMany(Item::class, 'id');
     }
 
     public function nilai 

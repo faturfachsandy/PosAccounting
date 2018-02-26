@@ -14,7 +14,7 @@ class CreateSaldoAwalsTable extends Migration
     public function up()
     {
         Schema::create('saldo_awals', function (Blueprint $table) {
-            $table->increments('id_saldo_awal');
+            $table->increments('id');
             $table->integer('item_id')->unsigned(); //foreign dari tabel item
             $table->integer('stok_awal');
             $table->integer('satuan_item_id')->unsigned(); //data dari satuan id di item
@@ -23,7 +23,7 @@ class CreateSaldoAwalsTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("item_id")->references("id")->on("items")->onDelete("cascade");
         
         });
     }

@@ -14,7 +14,7 @@ class FakturReturBeli extends Model
 
     public function item()
     {
-        return $this->belongsToMany(Item::class, 'faktur_retur_beli_detail', 'id_faktur_retur_beli', 'id_item');
+        return $this->belongsToMany(Item::class, 'faktur_retur_beli_detail', 'faktur_retur_beli_id', 'item_id');
     }
 
     public function fakturPembelian()

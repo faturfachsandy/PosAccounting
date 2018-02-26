@@ -16,17 +16,17 @@ class SalesOrder extends Model
 
     public function item()
     {
-        return $this->belongsToMany(Item::class, 'sales_order_detail', 'id_sales_order', 'id_item');
+        return $this->belongsToMany(Item::class, 'sales_order_detail', 'sales_order_id', 'item_id');
     }
 
     public function suratJalan()
     {
-        return $this->hasMany(SuratJalan::class, 'id_sales_order');
+        return $this->hasMany(SuratJalan::class, 'id');
     }
 
     public function fakturPenjualan()
     {
-        return $this->hasMany(FakturPenjualan::class, 'id_sales_order');
+        return $this->hasMany(FakturPenjualan::class, 'id');
     }
 
     public function karyawan()

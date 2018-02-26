@@ -29,107 +29,107 @@ class Item extends Model
 
     public function barangDatang()
     {
-        return $this->belongsToMany(BarangDatang::class, 'barang_datang_detail', 'id_item', 'id_barang_datang');
+        return $this->belongsToMany(BarangDatang::class, 'barang_datang_detail', 'item_id', 'barang_datang_id');
     }
 
     public function orderPembelianDetail()
     {
-        return $this->hasMany(OrderPembelianDetail::class, 'id_item');
+        return $this->hasMany(OrderPembelianDetail::class, 'id');
     }
 
     public function fakturReturJual()
     {
-        return $this->belongsToMany(FakturReturJual::class, 'faktur_retur_jual_detail', 'id_item', 'id_faktur_retur_jual');
+        return $this->belongsToMany(FakturReturJual::class, 'faktur_retur_jual_detail', 'item_id', 'faktur_retur_jual_id');
     }
 
     public function fakturReturBeli()
     {
-        return $this->belongsToMany(FakturReturBeli::class, 'faktur_retur_Beli_detail', 'id_item', 'id_faktur_retur_beli');
+        return $this->belongsToMany(FakturReturBeli::class, 'faktur_retur_Beli_detail', 'item_id', 'faktur_retur_beli_id');
     }
 
     public function fakturPenjualan()
     {
-        return $this->belongsToMany(FakturPenjualan::class, 'faktur_penjualan_detail', 'id_item', 'id_faktur_penjualan');
+        return $this->belongsToMany(FakturPenjualan::class, 'faktur_penjualan_detail', 'item_id', 'faktur_penjualan_id');
     }
 
     public function fakturPembelian()
     {
-        return $this->belongsToMany(FakturPembelian::class, 'faktur_pembelian_detail', 'id_item', 'id_faktur_pembelian');
+        return $this->belongsToMany(FakturPembelian::class, 'faktur_pembelian_detail', 'item_id', 'faktur_pembelian_id');
     }
 
     public function konversiSatuan()
     {
-        return $this->belongsToMany(KonversiSatuan::class, 'detail_item', 'id_item', 'id_konversi_satuan');
+        return $this->belongsToMany(KonversiSatuan::class, 'detail_item', 'item_id', 'konversi_satuan_id');
     }
 
     public function adjustmentNilai()
     {
-        return $this->belongsToMany(AdjustmentNilai::class, 'adjustment_nilai_detail', 'id_item', 'id_ajustment_nilai');
+        return $this->belongsToMany(AdjustmentNilai::class, 'adjustment_nilai_detail', 'item_id', 'ajustment_nilai_id');
     }
 
     public function perakitanDetail()
     {
-        return $this->belongsToMany(Perakitan::class, 'perakitan_detail', 'id_item', 'id_perakitan');
+        return $this->belongsToMany(Perakitan::class, 'perakitan_detail', 'item_id', 'perakitan_id');
     }
 
     public function stokOpname()
     {
-        return $this->belongsToMany(StokOpname::class, 'stok_opname_detail', 'id_item', 'id_stok_opname');
+        return $this->belongsToMany(StokOpname::class, 'stok_opname_detail', 'item_id', 'stok_opname_id');
     }
 
     public function suratJalan()
     {
-        return $this->belongsToMany(SuratJalan::class, 'surat_jalan_detail', 'id_item', 'id_surat_jalan');
+        return $this->belongsToMany(SuratJalan::class, 'surat_jalan_detail', 'item_id', 'surat_jalan_id');
     }
 
     public function salesOrder()
     {
-        return $this->belongsToMany(SalesOrder::class, 'sales_order_detail', 'id_item', 'id_sales_order');
+        return $this->belongsToMany(SalesOrder::class, 'sales_order_detail', 'item_id', 'sales_order_id');
     }
 
     public function detailItem()
     {
-        return $this->hasOne(DetailItem::class, 'id_item');
+        return $this->hasOne(DetailItem::class, 'id');
     }
 
     public function formula()
     {
-        return $this->hasOne(Formula::class, 'id_item');
+        return $this->hasOne(Formula::class, 'id');
     }
 
     public function subFormula()
     {
-        return $this->hasOne(Subformula::class, 'id_item');
+        return $this->hasOne(Subformula::class, 'id');
     }
 
     public function satuanItemFormula()
     {
-        return $this->hasOne(Formula::class, 'id_item');
+        return $this->hasOne(Formula::class, 'id');
     }
 
     public function satuanItemSubFormula()
     {
-        return $this->hasOne(Subformula::class, 'id_item');
+        return $this->hasOne(Subformula::class, 'id');
     }
 
     public function satuanItemSaldoAwal()
     {
-        return $this->hasOne(SaldoAwal::class, 'id_item');
+        return $this->hasOne(SaldoAwal::class, 'id');
     }
 
     public function perakitan()
     {
-        return $this->hasMany(Perakitan::class, 'id_item');
+        return $this->hasMany(Perakitan::class, 'id');
     }
 
     public function saldoAwal()
     {
-        return $this->hasOne(SaldoAwal::class, 'id_item');
+        return $this->hasOne(SaldoAwal::class, 'id');
     }
 
     public function daftarHarga()
     {
-    	return $this->hasOne(DaftarHarga::class, 'id_item');
+    	return $this->hasOne(DaftarHarga::class, 'id');
     }
 
     public function gudang()

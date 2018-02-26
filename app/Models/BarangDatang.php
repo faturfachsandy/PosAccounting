@@ -22,7 +22,7 @@ class BarangDatang extends Model
 
     public function fakturPembelian()
     {
-    	return $this->hasOne(FakturPembelian::class, 'id_barang_datang');
+    	return $this->hasOne(FakturPembelian::class, 'id');
     }
 
     public function person()
@@ -42,6 +42,6 @@ class BarangDatang extends Model
 
     public function item()
     {
-        return $this->belongsToMany(Item::class, 'barang_datang_detail', 'id_barang_datang', 'id_item');
+        return $this->belongsToMany(Item::class, 'barang_datang_detail', 'barang_datang_id', 'item_id');
     }
 }

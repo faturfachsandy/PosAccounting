@@ -14,7 +14,7 @@ class CreateAlamatsTable extends Migration
     public function up()
     {
         Schema::create('alamats', function (Blueprint $table) {
-            $table->increments('id_alamat');
+            $table->increments('id');
             $table->integer('tipe_alamat');
             $table->string('baris_1', 50);
             $table->string('baris_2', 50);

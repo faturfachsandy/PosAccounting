@@ -22,42 +22,42 @@ class Person extends Model
 
     public function salesOrder()
     {
-        return $this->hasMany(Gudang::class, 'id_person');
+        return $this->hasMany(Gudang::class, 'id');
     }
 
     public function FakturReturJual()
     {
-        return $this->hasMany(FakturReturJual::class, 'id_person');
+        return $this->hasMany(FakturReturJual::class, 'id');
     }
 
     public function FakturReturBeli()
     {
-        return $this->hasMany(FakturReturBeli::class, 'id_person');
+        return $this->hasMany(FakturReturBeli::class, 'id');
     }
 
     public function buktiKasMasuk()
     {
-        return $this->hasMany(BuktiKasMasuk::class, 'id_person');
+        return $this->hasMany(BuktiKasMasuk::class, 'id');
     }
 
     public function fakturPenjualan()
     {
-        return $this->hasMany(FakturPenjualan::class, 'id_person');
+        return $this->hasMany(FakturPenjualan::class, 'id');
     }
 
     public function fakturPembelian()
     {
-        return $this->hasMany(FakturPembelian::class, 'id_person');
+        return $this->hasMany(FakturPembelian::class, 'id');
     }
 
     public function orderPembelian()
     {
-        return $this->hasMany(OrderPembelian::class, 'id_person');
+        return $this->hasMany(OrderPembelian::class, 'id');
     }
 
     public function barangDatang()
     {
-        return $this->hasMany(BarangDatang::class, 'id_person');
+        return $this->hasMany(BarangDatang::class, 'id');
     }
 
     public function karyawan()

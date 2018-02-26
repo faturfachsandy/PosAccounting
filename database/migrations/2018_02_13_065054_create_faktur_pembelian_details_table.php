@@ -14,14 +14,14 @@ class CreateFakturPembelianDetailsTable extends Migration
     public function up()
     {
         Schema::create('faktur_pembelian_details', function (Blueprint $table) {
-            $table->increments('id_faktur_pembelian_detail');
+            $table->increments('id');
             $table->integer("faktur_pembelian_id")->unsigned(); //Foreign dari table faktur pembelian
             $table->integer("item_id")->unsigned(); //Foreign dari table item
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("faktur_pembelian_id")->references("id_faktur_pembelian")->on("faktur_pembelians")->onDelete("cascade");
-            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("faktur_pembelian_id")->references("id")->on("faktur_pembelians")->onDelete("cascade");
+            $table->foreign("item_id")->references("id")->on("items")->onDelete("cascade");
         });
     }
 

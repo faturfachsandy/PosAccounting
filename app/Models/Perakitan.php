@@ -23,11 +23,11 @@ class Perakitan extends Model
 
     public function orderPembelianDetail()
     {
-        return $this->hasMany(OrderPembelianDetail::class, 'id_perakitan');
+        return $this->hasMany(OrderPembelianDetail::class, 'id');
     }
 
     public function itemMany()
     {
-        return $this->belongsToMany(Item::class, 'perakitan_detail', 'id_perakitan', 'id_item');
+        return $this->belongsToMany(Item::class, 'perakitan_detail', 'perakitan_id', 'item_id');
     }
 }

@@ -14,7 +14,7 @@ class CreateKonversiSatuansTable extends Migration
     public function up()
     {
         Schema::create('konversi_satuans', function (Blueprint $table) {
-            $table->increments('id_konversi_satuan');
+            $table->increments('id');
             $table->integer('satuan1_id')->unsigned();// baca bawah
             $table->integer('satuan2_id')->unsigned();// foreign dari tabel satuan
             $table->integer('nilai_konversi');
@@ -23,8 +23,8 @@ class CreateKonversiSatuansTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("satuan1_id")->references("id_satuan")->on("satuans")->onDelete("cascade");
-            $table->foreign("satuan2_id")->references("id_satuan")->on("satuans")->onDelete("cascade");
+            $table->foreign("satuan1_id")->references("id")->on("satuans")->onDelete("cascade");
+            $table->foreign("satuan2_id")->references("id")->on("satuans")->onDelete("cascade");
         });
     }
 

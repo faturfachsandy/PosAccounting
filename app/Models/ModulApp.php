@@ -11,6 +11,6 @@ class ModulApp extends Model
 
     public function permissionUser()
     {
-    	return $this->hasMany(PermissionUser::class);
+    	return $this->hasMany(PermissionUser::class, 'id');
     }
 }

@@ -14,7 +14,7 @@ class CreateSalesOrdersTable extends Migration
     public function up()
     {
         Schema::create('sales_orders', function (Blueprint $table) {
-            $table->increments('id_sales_order');
+            $table->increments('id');
             $table->date("tanggal");
             $table->integer("karyawan_id")->unsigned(); //Foreign dari table Karyawan
             $table->integer("person_id")->unsigned(); //Foreign dari table person / people
@@ -30,10 +30,10 @@ class CreateSalesOrdersTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("karyawan_id")->references("id_karyawan")->on("karyawans")->onDelete("cascade");
-            $table->foreign("person_id")->references("id_person")->on("people")->onDelete("cascade");
-            $table->foreign("detail_person_id")->references("id_detail_person")->on("detail_people")->onDelete("cascade");
-            $table->foreign("jangka_waktu_kredit_id")->references("id_jangka_waktu_kredit")->on("jangka_waktu_kredits")->onDelete("cascade");
+            $table->foreign("karyawan_id")->references("id")->on("karyawans")->onDelete("cascade");
+            $table->foreign("person_id")->references("id")->on("people")->onDelete("cascade");
+            $table->foreign("detail_person_id")->references("id")->on("detail_people")->onDelete("cascade");
+            $table->foreign("jangka_waktu_kredit_id")->references("id")->on("jangka_waktu_kredits")->onDelete("cascade");
         });
     }
 

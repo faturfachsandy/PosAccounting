@@ -14,7 +14,7 @@ class CreateGudangsTable extends Migration
     public function up()
     {
         Schema::create('gudangs', function (Blueprint $table) {
-            $table->increments('id_gudang');
+            $table->increments('id');
             $table->string('nama_gudang', 50);
             $table->text('keterangan');
             $table->integer('alamat_id')->unsigned(); //foreign dari tabel alamat
@@ -24,7 +24,7 @@ class CreateGudangsTable extends Migration
             $table->timestamps();
             
             //-------- Relasi ----------
-            $table->foreign("alamat_id")->references("id_alamat")->on("alamats")->onDelete("cascade");
+            $table->foreign("alamat_id")->references("id")->on("alamats")->onDelete("cascade");
         });
     }
 

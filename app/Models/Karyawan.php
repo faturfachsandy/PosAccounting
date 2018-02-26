@@ -13,17 +13,17 @@ class Karyawan extends Model
 
     public function salesOrder()
     {
-    	return $this->hasOne(SalesOrder::class, 'id_karyawan');
+    	return $this->hasOne(SalesOrder::class, 'id');
     }
 
     public function fakturReturJual()
     {
-    	return $this->hasMany(FakturReturJual::class, 'id_karyawan');
+    	return $this->hasMany(FakturReturJual::class, 'id');
     }
 
     public function person()
     {
-    	return $this->hasOne(Person::class, 'id_karyawan');
+    	return $this->hasOne(Person::class, 'id');
     }
 
 }

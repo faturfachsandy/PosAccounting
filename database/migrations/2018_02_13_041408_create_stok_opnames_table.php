@@ -14,7 +14,7 @@ class CreateStokOpnamesTable extends Migration
     public function up()
     {
         Schema::create('stok_opnames', function (Blueprint $table) {
-            $table->increments('id_stok_opname');
+            $table->increments('id');
             $table->date('tanggal');
             $table->integer('gudang_id')->unsigned(); //foreign dari tabel gudang
             $table->string('no_ref', 50);
@@ -23,7 +23,7 @@ class CreateStokOpnamesTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("gudang_id")->references("id_gudang")->on("gudangs")->onDelete("cascade");
+            $table->foreign("gudang_id")->references("id")->on("gudangs")->onDelete("cascade");
         });
     }
 

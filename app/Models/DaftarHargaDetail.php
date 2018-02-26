@@ -11,6 +11,6 @@ class DaftarHargaDetail extends Model
 
     public function daftarHarga()
     {
-    	return $this->hasOne(DaftarHarga::class, 'id_daftar_harga_detail');
+    	return $this->hasOne(DaftarHarga::class, 'id');
     }
 }

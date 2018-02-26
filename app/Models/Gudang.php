@@ -17,32 +17,32 @@ class Gudang extends Model
 
     public function item()
     {
-    	return $this->hasMany(Item::class, 'id_gudang');
+    	return $this->hasMany(Item::class, 'id');
     }
 
     public function stokOpname()
     {
-    	return $this->hasMany(StokOpname::class, 'id_gudang');
+    	return $this->hasMany(StokOpname::class, 'id');
     }
 
     public function perakitan()
     {
-    	return $this->hasMany(Perakitan::class, 'id_gudang');
+    	return $this->hasMany(Perakitan::class, 'id');
     }
 
     public function fakturReturBeli()
     {
-    	return $this->hasMany(FakturReturBeli::class, 'id_gudang');
+    	return $this->hasMany(FakturReturBeli::class, 'id');
     }
 
     public function orderPembelian()
     {
-    	return $this->hasMany(OrderPembelian::class, 'id_gudang');
+    	return $this->hasMany(OrderPembelian::class, 'id');
     }
 
     public function suratJalan()
     {
-    	return $this->hasMany(SuratJalan::class, 'id_gudang');
+    	return $this->hasMany(SuratJalan::class, 'id');
     }
 
     public function alamat()
