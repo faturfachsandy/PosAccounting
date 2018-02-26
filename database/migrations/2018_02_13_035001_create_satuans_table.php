@@ -14,7 +14,7 @@ class CreateSatuansTable extends Migration
     public function up()
     {
         Schema::create('satuans', function (Blueprint $table) {
-            $table->increments('id_satuan');
+            $table->increments('id');
             $table->string('nama_satuan', 50);
             $table->text('keterangan');
             $table->boolean('default')->default(false);

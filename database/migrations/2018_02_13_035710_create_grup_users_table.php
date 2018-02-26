@@ -14,7 +14,7 @@ class CreateGrupUsersTable extends Migration
     public function up()
     {
         Schema::create('grup_users', function (Blueprint $table) {
-            $table->increments('id_grup_user');
+            $table->increments('id');
             $table->string('nama_grup', 50);
             $table->text('keterangan');
             $table->timestamps();

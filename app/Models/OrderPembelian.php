@@ -15,7 +15,7 @@ class OrderPembelian extends Model
 
     public function orderPembelianDetail()
     {
-        return $this->hasOne(OrderPembelianDetail::class, 'id_order_pembelian');
+        return $this->hasOne(OrderPembelianDetail::class, 'id');
     }
 
     public function person()

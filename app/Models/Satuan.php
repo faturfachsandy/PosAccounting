@@ -12,16 +12,16 @@ class Satuan extends Model
 
     public function konveriSatuan1
     {
-    	return $this->hasMany(KonversiSatuan::class, 'id_satuan');
+    	return $this->hasMany(KonversiSatuan::class, 'id');
     }
 
     public function konveriSatuan2
     {
-    	return $this->hasMany(KonversiSatuan::class, 'id_satuan');
+    	return $this->hasMany(KonversiSatuan::class, 'id');
     }
 
     public function item
     {
-    	return $this->hasOne(Item::class, 'id_satuan');
+    	return $this->hasOne(Item::class, 'id');
     }
 }

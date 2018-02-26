@@ -14,16 +14,16 @@ class Alamat extends Model
 
     public function gudang()
     {
-    	return $this->hasOne(Gudang::class, 'id_alamat');
+    	return $this->hasOne(Gudang::class, 'id');
     }
 
     public function orderPembelian()
     {
-    	return $this->hasMany(OrderPembelian::class, 'id_alamat');
+    	return $this->hasMany(OrderPembelian::class, 'id');
     }
 
     public function detailPerson()
     {
-    	return $this->hasMany(DetailPerson::class, 'id_alamat');
+    	return $this->hasMany(DetailPerson::class, 'id');
     }
 }

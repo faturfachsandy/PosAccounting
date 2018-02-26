@@ -14,7 +14,7 @@ class CreateSubformulasTable extends Migration
     public function up()
     {
         Schema::create('subformulas', function (Blueprint $table) {
-            $table->increments('id_subformula');
+            $table->increments('id');
             $table->integer('formula_id')->unsigned(); //foreign dari tabel formula
             $table->integer('item_id')->unsigned(); //foreign dari tabel item
             $table->integer('jumlah');
@@ -23,8 +23,8 @@ class CreateSubformulasTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("formula_id")->references("id_formula")->on("formulas")->onDelete("cascade");
-            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("formula_id")->references("id")->on("formulas")->onDelete("cascade");
+            $table->foreign("item_id")->references("id")->on("items")->onDelete("cascade");
         });
     }
 

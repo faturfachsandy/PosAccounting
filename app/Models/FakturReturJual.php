@@ -35,6 +35,6 @@ class FakturReturJual extends Model
 
     public function item()
     {
-        return $this->belongsToMany(Item::class, 'faktur_retur_jual_detail', 'id_faktur_rektur_jual', 'id_item');
+        return $this->belongsToMany(Item::class, 'faktur_retur_jual_detail', 'faktur_rektur_jual_id', 'item_id');
     }
 }

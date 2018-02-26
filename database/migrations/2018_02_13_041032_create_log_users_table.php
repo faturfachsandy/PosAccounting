@@ -14,14 +14,14 @@ class CreateLogUsersTable extends Migration
     public function up()
     {
         Schema::create('log_users', function (Blueprint $table) {
-            $table->increments('id_log_user');
+            $table->increments('id');
             $table->integer('user_id')->unsigned(); //foreign dari tabel users
             $table->string('aktivitas', 50);
             $table->text('keterangan');
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("user_id")->references("id_user")->on("users")->onDelete("cascade");
+            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
         });
     }
 

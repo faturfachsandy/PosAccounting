@@ -14,7 +14,7 @@ class CreateBuktiKasKeluarsTable extends Migration
     public function up()
     {
         Schema::create('bukti_kas_keluars', function (Blueprint $table) {
-            $table->increments('id_bukti_kas_keluar');
+            $table->increments('id');
             $table->integer("kas_id")->unsigned(); //Foreign dari table account
             $table->string("no_ref", 50);
             $table->date("tanggal");
@@ -25,7 +25,7 @@ class CreateBuktiKasKeluarsTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("kas_id")->references("id_account")->on("accounts")->onDelete("cascade");
+            $table->foreign("kas_id")->references("id")->on("accounts")->onDelete("cascade");
         });
     }
 

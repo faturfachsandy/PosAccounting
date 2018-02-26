@@ -14,7 +14,7 @@ class CreatePerakitansTable extends Migration
     public function up()
     {
         Schema::create('perakitans', function (Blueprint $table) {
-            $table->increments('id_perakitan');
+            $table->increments('id');
             $table->date('tanggal');
             $table->string('no_ref',50);
             $table->decimal('hpp',15,2);
@@ -25,8 +25,8 @@ class CreatePerakitansTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
-            $table->foreign("gudang_id")->references("id_gudang")->on("gudangs")->onDelete("cascade");
+            $table->foreign("item_id")->references("id")->on("items")->onDelete("cascade");
+            $table->foreign("gudang_id")->references("id")->on("gudangs")->onDelete("cascade");
         });
     }
 

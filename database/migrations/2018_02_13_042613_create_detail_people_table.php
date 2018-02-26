@@ -14,14 +14,14 @@ class CreateDetailPeopleTable extends Migration
     public function up()
     {
         Schema::create('detail_people', function (Blueprint $table) {
-            $table->increments('id_detail_person');
+            $table->increments('id');
             $table->integer('person_id')->unsigned(); // foreign dari table person
             $table->integer('alamat_id')->unsigned(); // foreign dari tabel alamat
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("person_id")->references("id_person")->on("people")->onDelete("cascade");
-            $table->foreign("alamat_id")->references("id_alamat")->on("alamats")->onDelete("cascade");
+            $table->foreign("person_id")->references("id")->on("people")->onDelete("cascade");
+            $table->foreign("alamat_id")->references("id")->on("alamats")->onDelete("cascade");
         });
     }
 

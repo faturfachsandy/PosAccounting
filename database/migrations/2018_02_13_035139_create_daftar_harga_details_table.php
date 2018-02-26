@@ -14,7 +14,7 @@ class CreateDaftarHargaDetailsTable extends Migration
     public function up()
     {
         Schema::create('daftar_harga_details', function (Blueprint $table) {
-            $table->increments('id_detail_harga');
+            $table->increments('id');
             $table->decimal('harga_jual', 15, 2);
             $table->text('keterangan');
             $table->timestamps();

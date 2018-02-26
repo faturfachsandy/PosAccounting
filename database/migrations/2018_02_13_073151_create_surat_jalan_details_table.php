@@ -14,7 +14,7 @@ class CreateSuratJalanDetailsTable extends Migration
     public function up()
     {
         Schema::create('surat_jalan_details', function (Blueprint $table) {
-            $table->increments('id_surat_jalan_detail');
+            $table->increments('id');
             $table->integer("surat_jalan_id")->unsigned(); //Foreign dari table surat jalan
             $table->integer("item_id")->unsigned(); //Foreign dari table item
             $table->integer("jumlah");
@@ -22,8 +22,8 @@ class CreateSuratJalanDetailsTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("surat_jalan_id")->references("id_surat_jalan")->on("surat_jalans")->onDelete("cascade");
-            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("surat_jalan_id")->references("id")->on("surat_jalans")->onDelete("cascade");
+            $table->foreign("item_id")->references("id")->on("items")->onDelete("cascade");
         });
     }
 

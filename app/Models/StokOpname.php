@@ -12,7 +12,7 @@ class StokOpname extends Model
 
     public function item()
     {
-        return $this->belongsToMany(Item::class, 'stok_opname_detail', 'id_stok_opname', 'id_item');
+        return $this->belongsToMany(Item::class, 'stok_opname_detail', 'stok_opname_id', 'item_id');
     }
 
     public function gudang()

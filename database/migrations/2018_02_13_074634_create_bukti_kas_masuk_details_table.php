@@ -14,7 +14,7 @@ class CreateBuktiKasMasukDetailsTable extends Migration
     public function up()
     {
         Schema::create('bukti_kas_masuk_details', function (Blueprint $table) {
-            $table->increments('id_bukti_kas_masuk_detail');
+            $table->increments('id');
             $table->integer("bukti_kas_masuk_id")->unsigned(); //Foreign dari table bukti kas masuk
             $table->integer("faktur_penjualan_id")->unsigned(); //Foreign dari table faktur pembelian
             $table->integer("potongan");
@@ -22,8 +22,8 @@ class CreateBuktiKasMasukDetailsTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("bukti_kas_masuk_id")->references("id_bukti_kas_masuk")->on("bukti_kas_masuks")->onDelete("cascade");
-            $table->foreign("faktur_penjualan_id")->references("id_faktur_penjualan")->on("faktur_penjualans")->onDelete("cascade");
+            $table->foreign("bukti_kas_masuk_id")->references("id")->on("bukti_kas_masuks")->onDelete("cascade");
+            $table->foreign("faktur_penjualan_id")->references("id")->on("faktur_penjualans")->onDelete("cascade");
         });
     }
 

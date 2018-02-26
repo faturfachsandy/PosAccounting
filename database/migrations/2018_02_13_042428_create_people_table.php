@@ -15,7 +15,7 @@ class CreatePeopleTable extends Migration
     public function up()
     {
         Schema::create('people', function (Blueprint $table) {
-            $table->increments('id_person');
+            $table->increments('id');
             $table->integer('tipe_person');
             $table->integer('karyawan_id')->unsigned(); //foreign dari tabel karyawan
             $table->string('kode_person',50)->index();
@@ -37,10 +37,10 @@ class CreatePeopleTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("karyawan_id")->references("id_karyawan")->on("karyawans")->onDelete("cascade");
-            $table->foreign("termin_pembayaran")->references("id_jangka_waktu_kredit")->on("jangka_waktu_kredits")->onDelete("cascade");
-            $table->foreign("coa_piutang_account_id")->references("id_account")->on("accounts")->onDelete("cascade");
-            $table->foreign("tipe_harga_jual_id")->references("id_daftar_harga")->on("daftar_hargas")->onDelete("cascade");
+            $table->foreign("karyawan_id")->references("id")->on("karyawans")->onDelete("cascade");
+            $table->foreign("termin_pembayaran")->references("id")->on("jangka_waktu_kredits")->onDelete("cascade");
+            $table->foreign("coa_piutang_account_id")->references("id")->on("accounts")->onDelete("cascade");
+            $table->foreign("tipe_harga_jual_id")->references("id")->on("daftar_hargas")->onDelete("cascade");
         });
     }
 

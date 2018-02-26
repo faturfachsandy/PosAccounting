@@ -17,17 +17,17 @@ class FakturPenjualan extends Model
     public function buktiKasMasuk()
     {
     	return $this->belongsToMany(BuktiKasMasuk::class,
-            'bukti_kas_masuk_detail', 'id_faktur_penjualan', 'id_bukti_kas_masuk');
+            'bukti_kas_masuk_detail', 'faktur_penjualan_id', 'bukti_kas_masuk_id');
     }
 
     public function item()
     {
-    	return $this->belongsToMany(Item::class, 'faktur_penjualan_detail', 'id_faktur_penjualan', 'id_item');
+    	return $this->belongsToMany(Item::class, 'faktur_penjualan_detail', 'faktur_penjualan_id', 'item_id');
     }
 
     public function fakturReturJual()
     {
-        return $this->hasMany(FakturReturJual::class, 'id_faktur_penjualan');
+        return $this->hasMany(FakturReturJual::class, 'id');
     }
 
     public function person()

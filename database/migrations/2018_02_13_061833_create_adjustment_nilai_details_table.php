@@ -14,7 +14,7 @@ class CreateAdjustmentNilaiDetailsTable extends Migration
     public function up()
     {
         Schema::create('adjustment_nilai_details', function (Blueprint $table) {
-            $table->increments('id_adjustment_nilai_detail');
+            $table->increments('id');
             $table->integer('adjustment_nilai_id')->unsigned(); //foreign dari tabel adjustment nilai
             $table->integer('item_id')->unsigned(); // foreign dari tabel item
             $table->decimal('nilai',15,2);
@@ -22,8 +22,8 @@ class CreateAdjustmentNilaiDetailsTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("adjustment_nilai_id")->references("id_adjustment_nilai")->on("adjustment_nilais")->onDelete("cascade");
-            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("adjustment_nilai_id")->references("id")->on("adjustment_nilais")->onDelete("cascade");
+            $table->foreign("item_id")->references("id")->on("items")->onDelete("cascade");
         });
     }
 

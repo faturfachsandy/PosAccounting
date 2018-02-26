@@ -12,7 +12,7 @@ class KonversiSatuan extends Model
 
     public function detailItem
     {
-    	return $this->hasOne(DetailItem::class, 'id_konversi_satuan');
+    	return $this->hasOne(DetailItem::class, 'id');
     }
 
     public function satuan1

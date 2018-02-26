@@ -14,7 +14,7 @@ class CreateModulAppsTable extends Migration
     public function up()
     {
         Schema::create('modul_apps', function (Blueprint $table) {
-            $table->increments('id_modul_app');
+            $table->increments('id');
             $table->string('nama_modul', 50);
             $table->text('keterangan');
             $table->timestamps();

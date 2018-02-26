@@ -14,7 +14,7 @@ class CreateSalesOrderDetailsTable extends Migration
     public function up()
     {
         Schema::create('sales_order_details', function (Blueprint $table) {
-            $table->increments('id_sales_order_detail');
+            $table->increments('id');
             $table->integer("sales_order_id")->unsigned(); // foreign dari table sales order
             $table->integer("item_id")->unsigned(); //Foreign dari table item
             $table->decimal("harga",15,2);
@@ -24,8 +24,8 @@ class CreateSalesOrderDetailsTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
-            $table->foreign("sales_order_id")->references("id_sales_order")->on("sales_orders")->onDelete("cascade");
+            $table->foreign("item_id")->references("id")->on("items")->onDelete("cascade");
+            $table->foreign("sales_order_id")->references("id")->on("sales_orders")->onDelete("cascade");
         });
     }
 

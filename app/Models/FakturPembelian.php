@@ -19,18 +19,18 @@ class FakturPembelian extends Model
 
     public function uangMuka()
     {
-    	return $this->hasMany(UangMuka::class, 'id_faktur_pembelian');
+    	return $this->hasMany(UangMuka::class, 'id');
     }
 
     public function buktiKasKeluar()
     {
     	return $this->belongsToMany(BuktiKasKeluar::class,
-             'bukti_kas_keluar_detail', 'id_faktur_pembelian', 'id_bukti_kas_keluar');
+             'bukti_kas_keluar_detail', 'faktur_pembelian_id', 'bukti_kas_keluar_id');
     }
 
     public function fakturReturBeli()
     {
-    	return $this->hasMany(FakturReturBeli::class, 'id_faktur_pembelian');
+    	return $this->hasMany(FakturReturBeli::class, 'id');
     }
 
     public function person()
@@ -60,6 +60,6 @@ class FakturPembelian extends Model
 
     public function item()
     {
-        return $this->belongsToMany(Item::class, 'faktur_pembelian_detail', 'id_faktur_pembelian', 'id_item');
+        return $this->belongsToMany(Item::class, 'faktur_pembelian_detail', 'faktur_pembelian_id', 'item_id');
     }
 }

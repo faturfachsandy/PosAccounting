@@ -14,7 +14,7 @@ class CreateBuktiKasMasuksTable extends Migration
     public function up()
     {
         Schema::create('bukti_kas_masuks', function (Blueprint $table) {
-            $table->increments('id_bukti_kas_masuk');
+            $table->increments('id');
             $table->integer("kas_id")->unsigned(); //Foreign dari table account
             $table->integer("person_id")->unsigned(); //Foreign dari table person / people
             $table->string("no_ref",50);
@@ -26,8 +26,8 @@ class CreateBuktiKasMasuksTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("kas_id")->references("id_account")->on("accounts")->onDelete("cascade");
-            $table->foreign("person_id")->references("id_person")->on("people")->onDelete("cascade");
+            $table->foreign("kas_id")->references("id")->on("accounts")->onDelete("cascade");
+            $table->foreign("person_id")->references("id")->on("people")->onDelete("cascade");
         });
     }
 

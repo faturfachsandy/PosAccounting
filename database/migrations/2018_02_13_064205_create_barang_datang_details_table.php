@@ -14,7 +14,7 @@ class CreateBarangDatangDetailsTable extends Migration
     public function up()
     {
         Schema::create('barang_datang_details', function (Blueprint $table) {
-            $table->increments('id_barang_datang_id');
+            $table->increments('id');
             $table->integer("barang_datang_id")->unsigned(); //
             $table->integer("item_id")->unsigned(); //
             $table->integer("jumlah");
@@ -22,8 +22,8 @@ class CreateBarangDatangDetailsTable extends Migration
             $table->timestamps();
 
             //-------- Relasi ----------
-            $table->foreign("barang_datang_id")->references("id_barang_datang")->on("barang_datangs")->onDelete("cascade");
-            $table->foreign("item_id")->references("id_item")->on("items")->onDelete("cascade");
+            $table->foreign("barang_datang_id")->references("id")->on("barang_datangs")->onDelete("cascade");
+            $table->foreign("item_id")->references("id")->on("items")->onDelete("cascade");
         });
     }
 
