@@ -8,7 +8,7 @@ use App\Models\Item;
 
 class StokOpname extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['tanggal', 'gudang_id', 'no_ref', 'keterangan', 'aktivitas'];
 
     public function item()
     {

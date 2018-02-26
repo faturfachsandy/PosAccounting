@@ -8,7 +8,7 @@ use App\Models\Item;
 
 class Satuan extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['nama_satuan', 'keterangan', 'default', 'aktif'];
 
     public function konveriSatuan1
     {

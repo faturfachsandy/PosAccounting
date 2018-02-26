@@ -9,7 +9,7 @@ use App\Models\AdjustmentNilaiDetail;
 
 class AdjustmentNilai extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['tanggal', 'no_ref', 'account_id', 'keterangan'];
 
     public function item()
     {

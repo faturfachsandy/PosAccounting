@@ -11,7 +11,7 @@ use App\User;
 
 class SuratJalan extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['nomor_sales_order', 'tanggal', 'gudang_id', 'status', 'user_id'];
 
     public function fakturPenjualan()
     {

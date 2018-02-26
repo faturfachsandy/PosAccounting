@@ -9,7 +9,7 @@ use App\Models\OrderPembelian;
 
 class OrderPembelianDetail extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['jumlah', 'subtotal', 'keterangan'];
 
     public function orderPembelian()
     {

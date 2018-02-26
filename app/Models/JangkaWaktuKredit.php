@@ -11,7 +11,7 @@ use App\Models\FakturPembelian;
 
 class JangkaWaktuKredit extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['account_id', 'jangka_waktu_kredit', 'default', 'aktif', 'keterangan'];
 
     public function account()
     {

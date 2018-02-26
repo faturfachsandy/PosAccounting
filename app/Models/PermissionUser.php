@@ -8,7 +8,9 @@ use App\Models\GrupUser;
 use App\User;
 
 class PermissionUser extends Model
-{
+{   
+    protected $fillable = ['modul_app_id', 'modul_app_id', 'user_id', 'grup_id'];
+
     public function modulApp()
     {
     	return $this->belongsTo(ModulApp::class, 'modul_app_id');

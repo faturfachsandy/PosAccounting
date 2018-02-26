@@ -7,7 +7,7 @@ use App\Models\PermissionUser;
 
 class GrupUser extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['nama_grup', 'keterangan'];
 
     public function permissionUser()
     {

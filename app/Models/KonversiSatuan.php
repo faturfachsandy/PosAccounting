@@ -8,7 +8,7 @@ use App\Models\DetailItem;
 
 class KonversiSatuan extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['satuan1_id', 'satuan2_id', 'nilai_konversi', 'keterangan', 'aktif'];
 
     public function detailItem
     {

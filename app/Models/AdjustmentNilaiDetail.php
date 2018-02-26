@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AdjustmentNilaiDetail extends Model
 {
-	protected $fillable = ['nilai', 'keterangan'];
+	protected $fillable = ['adjustment_nilai_id', 'item_id', 'nilai', 'keterangan'];
 
 	// public function adjustmentNilai()
  //    {

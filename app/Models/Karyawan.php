@@ -9,7 +9,7 @@ use App\Models\Person;
 
 class Karyawan extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['nama', 'nama_lengkap', 'keterangan', 'bagian', 'mulai_kerja', 'akhir_kerja'];
 
     public function salesOrder()
     {

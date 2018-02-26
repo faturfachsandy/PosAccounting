@@ -8,8 +8,7 @@ use App\Models\Item;
 
 class SubnilaiNilai extends Model
 {
-    protected $fillable = 
-    ['nama_subnilai', 'keterangan', 'default', 'urutan', 'berlaku_sejak', 'berlaku_hingga', 'aktif'];
+    protected $fillable = ['nilai_id', 'nama_subnilai', 'keterangan', 'default', 'urutan', 'berlaku_sejak', 'berlaku_hingga', 'aktif'];
 
     public function itemKelompokSubnilai
     {

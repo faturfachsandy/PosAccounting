@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BuktiKasKeluarDetail extends Model
 {
-    protected $fillable = [''];
+    // protected $fillable = ['bukti_kas_keluar_id', 'faktur_pembelian_id'];
 
     // public function fakturPembelian()
     // {

@@ -25,7 +25,7 @@ use App\Models\SaldoAwal;
 
 class Item extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['kode_item', 'gudang_id', 'nama_item', 'nama_item2', 'deskripsi', 'barcode', 'satuan_id', 'kelompok_subnilai_id', 'lokasi', 'minimum_stok', 'keterangan', 'jenis_subnilai_id', 'tipe_item_subnilai_id', 'merk_subnilai_id', 'madein_subnilai_id', 'grade_subnilai_id', 'gambar', 'hpp_awal', 'rakitan', 'transaksi', 'aktif'];
 
     public function barangDatang()
     {

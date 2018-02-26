@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class PerakitanDetail extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['jumlah', 'subtotal', 'keterangan'];
 }

@@ -9,7 +9,7 @@ use App\Models\OrderPembelianDetail;
 
 class Perakitan extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['tanggal', 'no_ref', 'hpp', 'item_id', 'jumlah_buat', 'gudang_id', 'keterangan'];
 
     public function item()
     {

@@ -7,7 +7,7 @@ use App\Models\PermissionUser;
 
 class ModulApp extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['nama_modul', 'keterangan'];
 
     public function permissionUser()
     {

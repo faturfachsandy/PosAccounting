@@ -11,7 +11,7 @@ use App\Models\OrderPembelianDetail;
 
 class OrderPembelian extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['no_ref', 'supplier_id', 'gudang_id', 'alamat_id', 'jangka_waktu_kredit_id', 'tgl_dibutuhkan', 'ppn', 'keterangan', 'total'; 'grand_total'];
 
     public function orderPembelianDetail()
     {

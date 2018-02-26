@@ -9,7 +9,7 @@ use App\Models\DaftarHargaDetail;
 
 class DaftarHarga extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['item_id', 'harga_beli', 'daftar_harga_detail_id', 'tipe_diskon', 'diskon'];
 
     public function person()
     {

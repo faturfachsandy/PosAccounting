@@ -10,7 +10,7 @@ use App\Models\JangkaWaktuKredit;
 
 class FakturReturBeli extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['tanggal', 'person_id', 'faktur_pembelian_id', 'gudang_id', 'tipe_diskon', 'diskon', 'ppn', 'keterangan', 'jangka_waktu_kredit_id', 'jatuh_tempo'];
 
     public function item()
     {

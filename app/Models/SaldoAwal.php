@@ -7,7 +7,7 @@ use App\Models\Item;
 
 class SaldoAwal extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['item_id', 'stok_awal', 'satuan_item_id', 'hpp_awal', 'subtotal'];
 
     public function item()
     {

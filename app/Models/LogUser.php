@@ -7,7 +7,7 @@ use App\User;
 
 class LogUser extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['user_id', 'aktivitas', 'keterangan'];
 
     public function user()
     {

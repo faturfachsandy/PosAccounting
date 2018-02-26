@@ -15,7 +15,7 @@ use App\User;
 
 class FakturPembelian extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['supplier_id', 'order_pembelian_id', 'barang_datang_id', 'tanggal', 'tipe_invoice', 'jangka_waktu_id', 'status', 'user_id'];
 
     public function uangMuka()
     {

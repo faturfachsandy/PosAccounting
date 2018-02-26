@@ -11,7 +11,7 @@ use App\Models\Item;
 
 class FakturReturJual extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['tanggal', 'person_id', 'faktur_penjualan_id', 'karyawan_id', 'tipe_diskon', 'diskon', 'ppn', 'keterangan', 'jangka_waktu_kredit_id', 'jatuh_tempo'];
 
     public function person()
     {

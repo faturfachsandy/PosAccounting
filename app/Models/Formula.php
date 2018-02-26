@@ -8,7 +8,7 @@ use App\Models\Item;
 
 class Formula extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['item_id', 'satuan_item_id', 'tgl_mulai_berlaku', 'tgl_sampai_berlaku', 'tgl_sampai_berlaku', 'no_ref', 'keterangan', 'aktif'];
 
     public function subformula()
     {

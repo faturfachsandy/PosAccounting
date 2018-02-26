@@ -13,7 +13,7 @@ use App\Models\SuratJalan;
 
 class Gudang extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['nama_gudang', 'keterangan', 'alamat_id', 'default', 'penjualan', 'aktif'];
 
     public function item()
     {

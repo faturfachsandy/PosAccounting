@@ -7,7 +7,7 @@ use App\Models\DaftarHarga;
 
 class DaftarHargaDetail extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['harga_jual', 'keterangan'];
 
     public function daftarHarga()
     {

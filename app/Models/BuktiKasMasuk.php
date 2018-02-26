@@ -9,7 +9,7 @@ use App\Models\Person;
 
 class BuktiKasMasuk extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['kas_id', 'person_id', 'no_ref', 'tanggal', 'keterangan', 'total', 'tanggal_jatuh_tempo', 'no_check_giro'];
 
     public function fakturPenjualan()
     {

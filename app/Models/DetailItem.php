@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetailItem extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['item_id', 'konversi_satuan_id'];
 
     // public function konversiSatuan()
     // {

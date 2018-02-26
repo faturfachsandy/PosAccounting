@@ -12,7 +12,7 @@ use App\Models\Item;
 
 class FakturPenjualan extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['no_ref', 'tipe_invoice', 'customer_id', 'sales_order_id', 'surat_jalan_id'];
 
     public function buktiKasMasuk()
     {

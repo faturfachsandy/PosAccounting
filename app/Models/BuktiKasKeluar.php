@@ -9,7 +9,7 @@ use App\Models\FakturPembelian;
 
 class BuktiKasKeluar extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['kas_id', 'no_ref', 'tanggal', 'no_check', 'keterangan', 'total', 'uang_muka_id'];
 
     public function account()
     {

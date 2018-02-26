@@ -9,7 +9,8 @@ use App\Models\DetailPerson;
 
 class Alamat extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['tipe_alamat', 'baris_1', 'baris_2', 'kota', 'provinsi', 'negara', '
+    telp', 'bank_account', 'bisa_kirim', 'tagihan', 'pajak', 'aktif'];
 
     public function gudang()
     {

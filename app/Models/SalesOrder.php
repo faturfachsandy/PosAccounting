@@ -12,7 +12,7 @@ use App\Models\SuratJalan;
 
 class SalesOrder extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['tanggal', 'karyawan_id', 'person_id', 'detail_person_id', 'jangka_waktu_kredit_id', 'tanggal_dibutuhkan', 'no_ref', 'tipe_diskon', 'diskon', 'ppn', 'keterangan', 'grand_total'];
 
     public function item()
     {

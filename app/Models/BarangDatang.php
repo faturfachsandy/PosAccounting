@@ -13,7 +13,7 @@ use App\Models\Item;
 
 class BarangDatang extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['tgl_barang_datang', 'no_ref', 'supplier', 'status', 'user_id', 'account_id'];
 
     // public function barangDatangDetail()
     // {

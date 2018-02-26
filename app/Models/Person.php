@@ -18,7 +18,7 @@ use App\Models\OrderPembelian;
 
 class Person extends Model
 {
-    protected $fillable = [''];
+    protected $fillable = ['tipe_person', 'karyawan_id', 'kode_person', 'nama', 'termin_pembayaran', 'batas_tempo', 'batas_piutang', 'batas_hutang', 'rayon', 'npwp', 'tipe_diskon', 'diskon', 'keterangan', 'coa_piutang_account_id', 'tipe_harga_jual_id', 'bisa_supplier', 'bisa_customer', 'aktif'];
 
     public function salesOrder()
     {
